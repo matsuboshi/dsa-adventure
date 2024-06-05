@@ -45,9 +45,9 @@ func max(values ...int) int{
 }
 
 func main() {
-	nums := []int{-2, 1, -3, 4, -1, 2, 1, -5, 4} 
-
-	fmt.Println(findMaxSubArray(nums,0,len(nums)-1))
+	problem := []int{-2, 1, -3, 4, -1, 2, 1, -5, 4} 
+	answer := findMaxSubArray(problem,0,len(problem)-1)
+	fmt.Println(answer)
 }
 
 
