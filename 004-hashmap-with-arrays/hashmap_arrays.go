@@ -110,22 +110,26 @@ func main() {
 	// 	newHM.array[i] = &bucket{}
 	// }
 
-	newHM.Add("Mitch")
-	newHM.Add("Edinho")
-	newHM.Add("Lucas")
-	newHM.Add("Tempureito")
+	newHM.Add("mitch")
+	newHM.Add("edinho")
+	newHM.Add("lucas")
+	newHM.Add("lusac")
+	newHM.Add("caslu")
+	newHM.Add("lasuc")
+	newHM.Add("culas")
+	newHM.Add("tempureito")
 	newHM.Read()
 
 	println()
-	newHM.Contains("Tempureito")
-	newHM.Contains("Mitsuhiko")
-	newHM.Contains("Lucas")
-	newHM.Contains("Vagabundo")
+	newHM.Contains("tempureito")
+	newHM.Contains("mitsuhiko")
+	newHM.Contains("lucas")
+	newHM.Contains("vagabundo")
 	println()
 
-	newHM.Remove("Tempureito")
-	newHM.Remove("Mitsuhiko")
-	newHM.Remove("Edinho")
+	newHM.Remove("tempureito")
+	newHM.Remove("mitsuhiko")
+	newHM.Remove("edinho")
 
 	println()
 	newHM.Read()
