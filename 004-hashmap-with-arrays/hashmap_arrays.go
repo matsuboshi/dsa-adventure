@@ -111,6 +111,9 @@ func main() {
 	// }
 
 	newHM.Add("mitch")
+	newHM.Add("tchim")
+	newHM.Add("chimt")
+	newHM.Add("mcith")
 	newHM.Add("edinho")
 	newHM.Add("lucas")
 	newHM.Add("lusac")
