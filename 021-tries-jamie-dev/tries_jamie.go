@@ -44,10 +44,41 @@ func (t *Trie) Search(w string) bool {
 	return currentNode.isEnd
 }
 
+func (t *Trie) DFS() {
+	var result []string
+	var path []rune
+
+	var dfsHelper func(*Node, []rune)
+	dfsHelper = func(node *Node, path []rune) {
+		if node == nil {
+			return
+		}
+		if node.isEnd {
+			result = append(result, string(path))
+		}
+		for i := 0; i < AlphabetSize; i++ {
+			if node.children[i] != nil {
+				path = append(path, rune('a'+i))
+				dfsHelper(node.children[i], path)
+				path = path[:len(path)-1] // Backtrack
+			}
+		}
+	}
+
+	dfsHelper(t.root, path)
+	for _, word := range result {
+		fmt.Println(word)
+	}
+}
+
 func main() {
 	myTrie := InitTrie()
 
 	toAdd := []string{
+		"abcde",
+		"abctr",
+		"abcor",
+		"abcgg",
 		"aragorn",
 		"aragon",
 		"argon",
@@ -62,7 +93,8 @@ func main() {
 	}
 
 	fmt.Println(myTrie.Search("wizard"))
-	fmt.Println(myTrie.Search("oreo"))
+	fmt.Println(myTrie.Search("abcde"))
 	fmt.Println(myTrie.Search("mitsuhiko"))
 
+	myTrie.DFS()
 }
