@@ -44,7 +44,7 @@ func (t *Trie) Search(w string) bool {
 	return currentNode.isEnd
 }
 
-func (t *Trie) DFS() {
+func (t *Trie) DFS() []string {
 	var result []string
 	var path []rune
 
@@ -66,9 +66,7 @@ func (t *Trie) DFS() {
 	}
 
 	dfsHelper(t.root, path)
-	for _, word := range result {
-		fmt.Println(word)
-	}
+	return result
 }
 
 func main() {
@@ -96,5 +94,8 @@ func main() {
 	fmt.Println(myTrie.Search("abcde"))
 	fmt.Println(myTrie.Search("mitsuhiko"))
 
-	myTrie.DFS()
+	result := myTrie.DFS()
+	for _, word := range result {
+		fmt.Println(word)
+	}
 }
