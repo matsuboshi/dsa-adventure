@@ -11,16 +11,6 @@ type linkedList struct {
 	head *node
 }
 
-func main() {
-	var myList linkedList
-	myList.addNodeToEnd(10)
-	myList.addNodeToEnd(20)
-	myList.addNodeToEnd(30)
-	myList.addNodeToEnd(40)
-	myList.addNodeToEnd(50)
-	myList.printList()
-}
-
 func (list *linkedList) addNodeToEnd(data int) {
 	nn := &node{data, nil}
 	if list.head == nil {
@@ -42,3 +32,12 @@ func (list *linkedList) printList() {
 	}
 }
 
+func main() {
+	var myList linkedList
+	myList.addNodeToEnd(10)
+	myList.addNodeToEnd(20)
+	myList.addNodeToEnd(30)
+	myList.addNodeToEnd(40)
+	myList.addNodeToEnd(50)
+	myList.printList()
+}
