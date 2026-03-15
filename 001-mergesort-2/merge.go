@@ -8,14 +8,14 @@ func MergeSort(nums []int) []int {
 		return nums
 	}
 
-	halfSize := len(nums)/2
+	halfSize := len(nums) / 2
 	left := MergeSort(nums[:halfSize])
 	right := MergeSort(nums[halfSize:])
 
 	return merge(left, right)
 }
 
-func merge (left, right []int) []int {
+func merge(left, right []int) []int {
 	li := 0
 	ri := 0
 
@@ -24,9 +24,9 @@ func merge (left, right []int) []int {
 	fullSize := leftSize + rightSize
 	result := make([]int, fullSize)
 
-	for i:=0 ; i<fullSize ; i++ { 
-		if li<leftSize && ri<rightSize {
-			if left[li]<right[ri] {
+	for i := 0; i < fullSize; i++ {
+		if li < leftSize && ri < rightSize {
+			if left[li] < right[ri] {
 				result[i] = left[li]
 				li++
 			} else {
@@ -36,13 +36,13 @@ func merge (left, right []int) []int {
 			continue
 		}
 
-		if li<leftSize {
+		if li < leftSize {
 			result[i] = left[li]
 			li++
 			continue
 		}
 
-		if ri<rightSize {
+		if ri < rightSize {
 			result[i] = right[ri]
 			ri++
 			continue
@@ -52,9 +52,8 @@ func merge (left, right []int) []int {
 	return result
 }
 
-
 func main() {
-	sortedSlice := MergeSort([]int{9,6,5,6,7,1,4,5,3,3,8,9,2,6,3,6,1})
+	sortedSlice := MergeSort([]int{9, 6, 5, 6, 7, 1, 4, 5, 3, 3, 8, 9, 2, 6, 3, 6, 1})
 
 	fmt.Println(sortedSlice)
 }

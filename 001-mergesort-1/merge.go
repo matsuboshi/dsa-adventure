@@ -17,14 +17,9 @@ func mergeSort(numbers []int) []int {
 	return merge(left, right)
 }
 
-
-
 func merge(left []int, right []int) []int {
 	li := 0
 	ri := 0
-	
-	
-	
 
 	fullSize := len(left) + len(right)
 	result := make([]int, fullSize)
